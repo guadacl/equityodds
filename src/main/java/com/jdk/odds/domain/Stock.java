@@ -19,6 +19,7 @@ public class Stock implements Serializable {
 	@Column(name="short_name")
 	private String shortName;
 
+	@Column(name="name")
 	private String name;
 
 	//bi-directional many-to-one association to Trading

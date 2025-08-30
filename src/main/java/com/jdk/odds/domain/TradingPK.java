@@ -1,7 +1,9 @@
 package com.jdk.odds.domain;
 
 import java.io.Serializable;
-import jakarta.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Embeddable;
 
 /**
  * The primary key class for the trading database table.
@@ -15,7 +17,8 @@ public class TradingPK implements Serializable {
 	@Column(name="short_name", insertable=false, updatable=false)
 	private String shortName;
 
-	private String type;
+	@Column(name="period")
+	private String period;
 
 	public TradingPK() {
 	}
@@ -25,11 +28,11 @@ public class TradingPK implements Serializable {
 	public void setShortName(String shortName) {
 		this.shortName = shortName;
 	}
-	public String getType() {
-		return this.type;
+	public String getPeriod() {
+		return this.period;
 	}
-	public void setType(String type) {
-		this.type = type;
+	public void setPeriod(String period) {
+		this.period = period;
 	}
 
 	public boolean equals(Object other) {
@@ -42,14 +45,14 @@ public class TradingPK implements Serializable {
 		TradingPK castOther = (TradingPK)other;
 		return 
 			this.shortName.equals(castOther.shortName)
-			&& this.type.equals(castOther.type);
+			&& this.period.equals(castOther.period);
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
 		hash = hash * prime + this.shortName.hashCode();
-		hash = hash * prime + this.type.hashCode();
+		hash = hash * prime + this.period.hashCode();
 		
 		return hash;
 	}

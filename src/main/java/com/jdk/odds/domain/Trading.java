@@ -1,7 +1,12 @@
 package com.jdk.odds.domain;
 
 import java.io.Serializable;
-import jakarta.persistence.*;
+
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.NamedQuery;
 
 
 /**
