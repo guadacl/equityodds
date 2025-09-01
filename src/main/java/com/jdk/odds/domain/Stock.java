@@ -6,11 +6,10 @@ import java.util.List;
 
 
 /**
- * The persistent class for the stocks database table.
+ * The persistent class for the stock database table.
  * 
  */
 @Entity
-@Table(name="stocks")
 @NamedQuery(name="Stock.findAll", query="SELECT s FROM Stock s")
 public class Stock implements Serializable {
 	private static final long serialVersionUID = 1L;

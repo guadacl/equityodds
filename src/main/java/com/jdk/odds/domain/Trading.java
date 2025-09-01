@@ -13,12 +13,11 @@ import jakarta.persistence.*;
 public class Trading implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	@EmbeddedId
-	private TradingPK id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
 
-	private float resistenza;
-
-	private float supporto;
+	private String period;
 
 	//bi-directional many-to-one association to Stock
 	@ManyToOne
@@ -28,28 +27,20 @@ public class Trading implements Serializable {
 	public Trading() {
 	}
 
-	public TradingPK getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(TradingPK id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public float getResistenza() {
-		return this.resistenza;
+	public String getPeriod() {
+		return this.period;
 	}
 
-	public void setResistenza(float resistenza) {
-		this.resistenza = resistenza;
-	}
-
-	public float getSupporto() {
-		return this.supporto;
-	}
-
-	public void setSupporto(float supporto) {
-		this.supporto = supporto;
+	public void setPeriod(String period) {
+		this.period = period;
 	}
 
 	public Stock getStock() {
