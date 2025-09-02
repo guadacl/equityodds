@@ -3,20 +3,14 @@ package com.jdk.odds.web;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Optional;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
-import org.mapstruct.Mapper;
 
 import com.jdk.odds.domain.Trading;
 import com.jdk.odds.dtos.QuoteResponseDTO;
-
-import ch.qos.logback.core.model.ComponentModel;
 
 
 
@@ -30,10 +24,7 @@ public interface QuoteMapper {
 	}
 
 	static QuoteResponseDTO map(LinkedHashMap<String,Object> rapidRecord,Trading trading) {
-
-
 		QuoteResponseDTO dto = new QuoteResponseDTO();
-		
 
 		dto.setRegularMarketDayRange((String) rapidRecord.get("regularMarketDayRange"));
 		dto.setAverageDailyVolume10Day((Integer) rapidRecord.get("averageDailyVolume10Day"));

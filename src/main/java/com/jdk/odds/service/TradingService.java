@@ -6,6 +6,5 @@ import com.jdk.odds.PeriodEnum;
 import com.jdk.odds.domain.Trading;
 
 public interface TradingService {
-
-		List<Trading> findByPeriod(PeriodEnum periodEnum);
+	List<Trading> findByPeriod(PeriodEnum periodEnum);
 }

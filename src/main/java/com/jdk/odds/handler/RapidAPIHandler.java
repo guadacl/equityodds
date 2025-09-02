@@ -9,6 +9,4 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 public interface RapidAPIHandler {
 	
 	ArrayList<LinkedHashMap<String, Object>>  getQuotes(String region);
-	
-
 }
