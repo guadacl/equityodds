@@ -1,5 +1,7 @@
 package com.jdk.odds.domain;
 
+import java.math.BigDecimal;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.metamodel.SingularAttribute;
 import jakarta.persistence.metamodel.StaticMetamodel;
@@ -10,4 +12,7 @@ public class Trading_ {
 	public static volatile SingularAttribute<Trading, Integer> id;
 	public static volatile SingularAttribute<Trading, String> period;
 	public static volatile SingularAttribute<Trading, Stock> stock;
+	public static volatile SingularAttribute<Trading, BigDecimal> supporto ;
+	public static volatile SingularAttribute<Trading, BigDecimal> resistenza;
+	public static volatile SingularAttribute<Trading, String> note;
 }
